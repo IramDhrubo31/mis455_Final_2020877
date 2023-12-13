@@ -15,7 +15,9 @@ function display (data){
     for (var i=0; i<weatherList.length; i=i+8){
         var newDiv = document.createElement("div");
         var date_time = weatherList[i].dt_txt;
-        var date = date_time.substr(0 , 10);
+        var dateInYMD = date_time.substr(0 , 10);
+        var dateParts = dateInYMD.split("-");
+        var date = dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
         var time = date_time.substr(12 , 20);
         newDiv.innerHTML = `
                 <b>Date: </b>${date}<br>
