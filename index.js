@@ -12,7 +12,7 @@ function display (data){
     var oldContent = document.getElementById("container");
     oldContent.textContent = "";
 
-    for (var i=0; i<5; i++){
+    for (var i=0; i<weatherList.length; i=i+8){
         var newDiv = document.createElement("div");
         var date_time = weatherList[i].dt_txt;
         var date = date_time.substr(0 , 10);
