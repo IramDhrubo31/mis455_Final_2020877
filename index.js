@@ -1,5 +1,5 @@
 function connect(){
-    var searchTerm = document.getElementById("countryName").value;
+    var searchTerm = document.getElementById("searchBox").value;
     var url = `https://api.openweathermap.org/data/2.5/forecast?q=${searchTerm}&appid=fd65df3fd56ce45fd9b36820ef734946`;
    
     fetch (url)
@@ -18,15 +18,15 @@ function display (data){
         var date = date_time.substr(0 , 10);
         var time = date_time.substr(12 , 20);
         newDiv.innerHTML = `
-            <b>Date: </b>${date}<br>
-            <b>Time: </b>${time}<br><br>
-            <b>Temperature: </b>${weatherList[i].main.temp}<br>
-            <b>Feels Like: </b>${weatherList[i].main.feels_like}<br>
-            <b>Min Temperature: </b>${weatherList[i].main.temp_min}<br>
-            <b>Max Temperature: </b>${weatherList[i].main.temp_max}<br>
-            <b>Humidity: </b>${weatherList[i].main.humidity}<br>
-            <b>Wind Speed: </b>${weatherList[i].wind.speed}<br>
-            <b>Weather: </b>${weatherList[i].weather[0].description} <img src="https://openweathermap.org/img/wn/${weatherList[i].weather[0].icon}@2x.png" alt="Weather Icon"><br>
+                <b>Date: </b>${date}<br>
+                <b>Time: </b>${time}<br><br>
+                <b>Temperature: </b>${weatherList[i].main.temp} &degC<br>
+                <b>Feels Like: </b>${weatherList[i].main.feels_like} &degC<br><br>
+                <b>Min Temperature: </b>${weatherList[i].main.temp_min} &degC<br>
+                <b>Max Temperature: </b>${weatherList[i].main.temp_max} &degC<br><br>
+                <b>Humidity: </b>${weatherList[i].main.humidity} %<br>
+                <b>Wind Speed: </b>${weatherList[i].wind.speed} m/s<br><br>
+                <b>Weather: </b>${weatherList[i].weather[0].description}<br><img src="https://openweathermap.org/img/wn/${weatherList[i].weather[0].icon}@2x.png" alt="Weather Icon">
         `
 
         newDiv.classList.add("weatherStyle");

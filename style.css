@@ -9,8 +9,9 @@ body{
 #title{
     margin: 20px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
+    color: navy;
 }
 
 #searchBar{
@@ -18,15 +19,18 @@ body{
     text-align: center;
 }
 
-#countryName{
+#searchBox{
     width: 50%;
     height: 30px;
     font-size: 20px;
+    padding: 5px;
+    border: 2px solid black;
 }
 
 #searchBtn{
-    font-size: 16px;
-    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 20px;
     border-radius: 20px;
 }
 
@@ -41,11 +45,12 @@ body{
 }
 
 .weatherStyle{
-    font-size: 16px;
+    font-size: 20px;
     margin: 20px;
     padding: 20px;
-    border: 4px solid grey;
+    border: 4px solid white;
     border-radius: 30px;
-    background-color: whitesmoke;
-    box-shadow: 5px 5px grey;
+    color: whitesmoke;
+    background-color: black;
+    box-shadow: 8px 8px grey;
 }
