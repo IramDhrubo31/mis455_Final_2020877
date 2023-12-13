@@ -12,14 +12,19 @@ function display (data){
     var oldContent = document.getElementById("container");
     oldContent.textContent = "";
 
-    for (var i=0; i<sizeof(weatherList); i++){
+    for (var i=0; i<5; i++){
         var newDiv = document.createElement("div");
+        var date_time = weatherList[i].dt_txt;
+        var date = date_time.substr(0 , 10);
+        var time = date_time.substr(12 , 20);
         newDiv.innerHTML = `
+            <b>Date: </b>${date}<br>
+            <b>Time: </b>${time}<br>
             <b>Temperature: </b>${weatherList[i].main.temp}<br>
             <b>Feels Like: </b>${weatherList[i].main.feels_like}<br>
             <b>Min Temperature: </b>${weatherList[i].main.temp_min}<br>
             <b>Max Temperature: </b>${weatherList[i].main.temp_max}<br>
-            <b>Humidity: </b>${weatherList[i].main.humidity}<br><br>
+            <b>Humidity: </b>${weatherList[i].main.humidity}<br>
             <b>Wind Speed: </b>${weatherList[i].wind.speed}<br>
             <b>Weather Description</b>${weatherList[i].weather[0].description}<br>
         `
