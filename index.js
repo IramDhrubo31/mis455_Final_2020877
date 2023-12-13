@@ -19,14 +19,14 @@ function display (data){
         var time = date_time.substr(12 , 20);
         newDiv.innerHTML = `
             <b>Date: </b>${date}<br>
-            <b>Time: </b>${time}<br>
+            <b>Time: </b>${time}<br><br>
             <b>Temperature: </b>${weatherList[i].main.temp}<br>
             <b>Feels Like: </b>${weatherList[i].main.feels_like}<br>
             <b>Min Temperature: </b>${weatherList[i].main.temp_min}<br>
             <b>Max Temperature: </b>${weatherList[i].main.temp_max}<br>
             <b>Humidity: </b>${weatherList[i].main.humidity}<br>
             <b>Wind Speed: </b>${weatherList[i].wind.speed}<br>
-            <b>Weather Description</b>${weatherList[i].weather[0].description}<br>
+            <b>Weather: </b>${weatherList[i].weather[0].description} <img src="https://openweathermap.org/img/wn/${weatherList[i].weather[0].icon}@2x.png" alt="Weather Icon"><br>
         `
 
         newDiv.classList.add("weatherStyle");
